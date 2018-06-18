@@ -13,6 +13,10 @@
 		AE8573551F9D179100D73806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8573531F9D179100D73806 /* Main.storyboard */; };
 		AE85735A1F9D179100D73806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8573581F9D179100D73806 /* LaunchScreen.storyboard */; };
 		AE8573651F9D206800D73806 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AE8573641F9D206800D73806 /* example_5s0_hand_model.mlmodel */; };
+		CD7E486320D7E74500C823AC /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E486220D7E74400C823AC /* BluetoothSerial.swift */; };
+		CD7E486520D7E75D00C823AC /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E486420D7E75D00C823AC /* ScannerViewController.swift */; };
+		CD7E486720D7E7E300C823AC /* SerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E486620D7E7E300C823AC /* SerialViewController.swift */; };
+		CD7E486C20D7E95800C823AC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7E486920D7E95700C823AC /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,12 @@
 		AE8573591F9D179100D73806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE85735B1F9D179100D73806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE8573641F9D206800D73806 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
+		CD7E486220D7E74400C823AC /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		CD7E486420D7E75D00C823AC /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		CD7E486620D7E7E300C823AC /* SerialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialViewController.swift; sourceTree = "<group>"; };
+		CD7E486820D7E95600C823AC /* Gesture-Recognition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gesture-Recognition-Bridging-Header.h"; sourceTree = "<group>"; };
+		CD7E486920D7E95700C823AC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CD7E486B20D7E95800C823AC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +69,16 @@
 				AE85734D1F9D179100D73806 /* AppDelegate.swift */,
 				AE85734F1F9D179100D73806 /* art.scnassets */,
 				AE8573511F9D179100D73806 /* ViewController.swift */,
+				CD7E486220D7E74400C823AC /* BluetoothSerial.swift */,
+				CD7E486B20D7E95800C823AC /* MBProgressHUD.h */,
+				CD7E486920D7E95700C823AC /* MBProgressHUD.m */,
 				AE8573531F9D179100D73806 /* Main.storyboard */,
+				CD7E486420D7E75D00C823AC /* ScannerViewController.swift */,
 				AE8573581F9D179100D73806 /* LaunchScreen.storyboard */,
 				AE85735B1F9D179100D73806 /* Info.plist */,
 				AE8573641F9D206800D73806 /* example_5s0_hand_model.mlmodel */,
+				CD7E486620D7E7E300C823AC /* SerialViewController.swift */,
+				CD7E486820D7E95600C823AC /* Gesture-Recognition-Bridging-Header.h */,
 			);
 			path = "Gesture-Recognition";
 			sourceTree = "<group>";
@@ -99,6 +115,7 @@
 				TargetAttributes = {
 					AE8573491F9D179100D73806 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -141,7 +158,11 @@
 			files = (
 				AE8573521F9D179100D73806 /* ViewController.swift in Sources */,
 				AE85734E1F9D179100D73806 /* AppDelegate.swift in Sources */,
+				CD7E486720D7E7E300C823AC /* SerialViewController.swift in Sources */,
+				CD7E486320D7E74500C823AC /* BluetoothSerial.swift in Sources */,
+				CD7E486520D7E75D00C823AC /* ScannerViewController.swift in Sources */,
 				AE8573651F9D206800D73806 /* example_5s0_hand_model.mlmodel in Sources */,
+				CD7E486C20D7E95800C823AC /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FDUR7X8MST;
 				INFOPLIST_FILE = "$(SRCROOT)/Gesture-Recognition/Info.plist";
@@ -285,6 +307,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leodegeus.gestures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gesture-Recognition/Gesture-Recognition-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -294,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FDUR7X8MST;
 				INFOPLIST_FILE = "$(SRCROOT)/Gesture-Recognition/Info.plist";
@@ -301,6 +326,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leodegeus.gestures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gesture-Recognition/Gesture-Recognition-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

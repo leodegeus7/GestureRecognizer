@@ -8,8 +8,17 @@ import UIKit
 import SceneKit
 import ARKit
 import Vision
+import CoreBluetooth
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate,BluetoothSerialDelegate {
+    func serialDidChangeState() {
+        
+    }
+    
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var debugTextView: UITextView!
@@ -20,7 +29,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        serial.delegate = self
         sceneView.delegate = self
         let scene = SCNScene()
         sceneView.scene = scene
@@ -100,12 +109,33 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let topPredictionName = topPrediction.components(separatedBy: ":")[0].trimmingCharacters(in: .whitespaces)
             let topPredictionScore:Float? = Float(topPrediction.components(separatedBy: ":")[1].trimmingCharacters(in: .whitespaces))
             if (topPredictionScore != nil && topPredictionScore! > 0.01) {
-                if (topPredictionName == "mao-fechada") { symbol = "👊" }
-                if (topPredictionName == "mao-aberta") { symbol = "🖐" }
+                if (topPredictionName == "mao-fechada") { symbol = "👊"
+                    if self.actualHand != "👊" {
+                    if serial.isReady {
+                        
+                        serial.sendMessageToDevice("L0")
+                    }
+                    }
+                    self.actualHand = "👊"
+                }
+                
+                if (topPredictionName == "mao-aberta") { symbol = "🖐"
+                    
+                    if self.actualHand != "🖐" {
+                    if serial.isReady {
+                        
+                        serial.sendMessageToDevice("L1")
+                    }
+                    }
+                    self.actualHand = "🖐"
+                    
+                }
             }
             self.textOverlay.text = symbol
         }
     }
+    
+    var actualHand = ""
 
     override var prefersStatusBarHidden : Bool { return true }
 }
